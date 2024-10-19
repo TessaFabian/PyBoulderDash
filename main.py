@@ -1,9 +1,10 @@
 import pygame as pg
 from pygame.locals import *
+from locals import *
 
 def main():
     pg.init()
-    screen = pg.display.set_mode((1280, 780), pg.SCALED)
+    screen = pg.display.set_mode((WIDTH, HEIGHT), pg.SCALED)
     pg.display.set_caption("Boulder Dash")
 
     background = pg.Surface(screen.get_size()).convert()
