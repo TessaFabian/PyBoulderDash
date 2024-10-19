@@ -5,8 +5,6 @@ mainDir = os.path.split(os.path.abspath(__file__))[0]
 imgDir = os.path.join(mainDir, "images")
 
 
-
-
 def loadImage(name, colorkey = None, scale = 1):
     fullname = os.path.join(imgDir, name)
     try:
