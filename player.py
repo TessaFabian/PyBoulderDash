@@ -8,7 +8,7 @@ class Player(pg.sprite.Sprite):
     def __init__(self, x, y):
         pg.sprite.Sprite.__init__(self)
         img = pg.image.load("images/player01.png")
-        self.image = pg.transform.scale(img, (32,32))
+        self.image = pg.transform.scale(img, (50,50))
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
@@ -30,5 +30,7 @@ class Player(pg.sprite.Sprite):
 
         if self.rect.bottom > HEIGHT:
             self.rect.bottom = HEIGHT
+        if self.rect.top < 50:
+            self.rect.top = 50
 
         screen.blit(self.image, self.rect)

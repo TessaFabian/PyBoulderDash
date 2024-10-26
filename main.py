@@ -22,7 +22,7 @@ def main():
     clock = pg.time.Clock()
 
     world = World()
-    player = Player(100, HEIGHT-130)
+    player = Player(50, HEIGHT-100)
     running = True
     while running:
 
