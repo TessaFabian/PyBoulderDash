@@ -2,6 +2,7 @@ import pygame
 import pygame as pg
 from pygame.locals import *
 from locals import *
+from player import Player
 from world import *
 
 pg.init()
@@ -21,13 +22,13 @@ def main():
     clock = pg.time.Clock()
 
     world = World()
-
+    player = Player(100, HEIGHT-130)
     running = True
     while running:
 
         world.draw(screen)
-
-        draw_grid(screen)
+        player.update(screen)
+        #draw_grid(screen)
 
         for event in pg.event.get():
            if event.type == QUIT:

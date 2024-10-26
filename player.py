@@ -1,4 +1,5 @@
 import pygame as pg
+
 from tools import *
 from locals import *
 
@@ -6,4 +7,28 @@ class Player(pg.sprite.Sprite):
 
     def __init__(self, x, y):
         pg.sprite.Sprite.__init__(self)
-        self.image = loadImage("boulderdash.png").convert()
+        img = pg.image.load("images/player01.png")
+        self.image = pg.transform.scale(img, (32,32))
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        #no dynamic movements
+
+    def update(self, screen):
+        key = pg.key.get_pressed()
+        if key[pg.K_LEFT]:
+            self.rect.x -= 5
+        if key[pg.K_RIGHT]:
+            self.rect.x += 5
+        if key[pg.K_UP]:
+            self.rect.y -= 5
+        if key[pg.K_DOWN]:
+            self.rect.y += 5
+
+        #check for collisions
+
+
+        if self.rect.bottom > HEIGHT:
+            self.rect.bottom = HEIGHT
+
+        screen.blit(self.image, self.rect)
