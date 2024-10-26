@@ -6,8 +6,10 @@ from world import *
 
 pg.init()
 
+#range(0,38)?
+#WIDTH/TILE_SIZE = 38
 def draw_grid(screen):
-    for line in range(0,20):
+    for line in range(0,38):
         pg.draw.line(screen, WHITE, (0,line*TILE_SIZE), (WIDTH, line*TILE_SIZE))
         pg.draw.line(screen, WHITE, (line * TILE_SIZE, 0), (line * TILE_SIZE, HEIGHT))
 
