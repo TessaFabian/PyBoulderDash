@@ -26,6 +26,8 @@ def main():
     running = True
     while running:
 
+        clock.tick(FPS)
+
         world.draw(screen)
         player.update(screen)
         #draw_grid(screen)
