@@ -12,6 +12,7 @@ class Player(pg.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+        print(self.rect.bottomright)
         #no dynamic movements
 
     def update(self, screen):
@@ -32,5 +33,10 @@ class Player(pg.sprite.Sprite):
             self.rect.bottom = HEIGHT
         if self.rect.top < 50:
             self.rect.top = 50
+        if self.rect.bottomleft[0] < 50:
+            self.rect.bottomleft = (50, self.rect.bottomleft[1])
+        if self.rect.bottomright[0] > WIDTH - 50:
+            self.rect.bottomright = (WIDTH-50, self.rect.bottomright[1])
+
 
         screen.blit(self.image, self.rect)
