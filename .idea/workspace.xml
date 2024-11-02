@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0c3cdb3-9859-45cc-9a77-7f00a27e0c5c" name="Changes" comment="player animation, loading the images">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locals.py" beforeDir="false" afterPath="$PROJECT_DIR$/locals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-    </list>
+    <list default="true" id="d0c3cdb3-9859-45cc-9a77-7f00a27e0c5c" name="Changes" comment="player animation, player moves to the right and to the left" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730557419081</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="player animation, player moves to the right and to the left">
+      <option name="closed" value="true" />
+      <created>1730558499849</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1730558499849</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +215,7 @@
     <MESSAGE value="Kollisionserkennung zu den Rändern implementiert" />
     <MESSAGE value="player sprites" />
     <MESSAGE value="player animation, loading the images" />
-    <option name="LAST_COMMIT_MESSAGE" value="player animation, loading the images" />
+    <MESSAGE value="player animation, player moves to the right and to the left" />
+    <option name="LAST_COMMIT_MESSAGE" value="player animation, player moves to the right and to the left" />
   </component>
 </project>
