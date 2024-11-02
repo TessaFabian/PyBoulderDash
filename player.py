@@ -7,8 +7,24 @@ class Player(pg.sprite.Sprite):
 
     def __init__(self, x, y):
         pg.sprite.Sprite.__init__(self)
-        img = pg.image.load("images/player01.png")
-        self.image = pg.transform.scale(img, (50,50))
+        #images moving to the right
+        self.imagesRight = []
+        self.imagesLeft = []
+        self.index = 0 #index for the images in the animation list
+        self.counter = 0 #controls the animation speed
+
+        for number in range(1,12):
+            if number < 10:
+                imgRight = pg.transform.scale(pg.image.load("images/player0" + str(number) + ".png"),
+                    (50, 50))
+                imgLeft = pg.transform.flip(imgRight, True, True)
+            if number >= 10:
+                imgRight = pg.transform.scale(pg.image.load("images/player" + str(number) + ".png"),
+                    (50, 50))
+                imgLeft = pg.transform.flip(imgRight, True, True)
+            self.imagesRight.append(imgRight)
+            self.imagesLeft.append(imgLeft)
+        self.image = self.imagesRight[self.index] #player at his starting position
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
