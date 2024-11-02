@@ -17,11 +17,11 @@ class Player(pg.sprite.Sprite):
             if number < 10:
                 imgRight = pg.transform.scale(pg.image.load("images/player0" + str(number) + ".png"),
                     (50, 50))
-                imgLeft = pg.transform.flip(imgRight, True, True)
+                imgLeft = pg.transform.flip(imgRight, True, False)
             if number >= 10:
                 imgRight = pg.transform.scale(pg.image.load("images/player" + str(number) + ".png"),
                     (50, 50))
-                imgLeft = pg.transform.flip(imgRight, True, True)
+                imgLeft = pg.transform.flip(imgRight, False, False)
             self.imagesRight.append(imgRight)
             self.imagesLeft.append(imgLeft)
         self.image = self.imagesRight[self.index] #player at his starting position
