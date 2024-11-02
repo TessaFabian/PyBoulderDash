@@ -29,8 +29,8 @@ class Player(pg.sprite.Sprite):
         #check for collisions
 
 
-        if self.rect.bottom > HEIGHT:
-            self.rect.bottom = HEIGHT
+        if HEIGHT - self.rect.bottom < 50:
+            self.rect.bottom = HEIGHT - 50
         if self.rect.top < 50:
             self.rect.top = 50
         if self.rect.bottomleft[0] < 50:
