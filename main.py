@@ -1,4 +1,4 @@
-import pygame
+
 import pygame as pg
 from pygame.locals import *
 from locals import *
@@ -38,6 +38,6 @@ def main():
 
         pg.display.update()
 
-    pygame.quit()
+    pg.quit()
 
 if __name__ == "__main__": main()
