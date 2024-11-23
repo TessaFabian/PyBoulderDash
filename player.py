@@ -61,7 +61,7 @@ class Player(pg.sprite.Sprite):
             self.counter = 0
             self.index += 1
             if self.index >= len(self.imagesRight):
-                self.index = 0
+                self.index = 1
             if self.direction == 1:
                 self.image = self.imagesRight[self.index]
             if self.direction == -1:
