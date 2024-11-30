@@ -2,6 +2,7 @@ import pygame as pg
 
 from tools import *
 from locals import *
+from world import *
 
 class Player(pg.sprite.Sprite):
 
@@ -28,7 +29,7 @@ class Player(pg.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-
+        self.world = World()
 
     def update(self, screen):
 
@@ -53,8 +54,10 @@ class Player(pg.sprite.Sprite):
                 self.image = self.imagesLeft[self.index]
         if key[pg.K_UP]:
             self.rect.y -= 5
+            self.direction = -2
         if key[pg.K_DOWN]:
             self.rect.y += 5
+            self.direction = 2
 
         #handle animations
         if self.counter > walkCooldown:
@@ -68,14 +71,19 @@ class Player(pg.sprite.Sprite):
                 self.image = self.imagesLeft[self.index]
 
         #check for collisions
-        if HEIGHT - self.rect.bottom < 50:
-            self.rect.bottom = HEIGHT - 50
-        if self.rect.top < 50:
-            self.rect.top = 50
-        if self.rect.bottomleft[0] < 50:
-            self.rect.bottomleft = (50, self.rect.bottomleft[1])
-        if self.rect.bottomright[0] > WIDTH - 50:
-            self.rect.bottomright = (WIDTH-50, self.rect.bottomright[1])
+        for tile in self.world.tile_list:
+            tile_rect = tile[1]
+            tileIsObstacle = tile[2]
+            if tile_rect.colliderect(self.rect) and tileIsObstacle:
+                if self.direction == 1: #Player bewegt sich nach rechts
+                    self.rect.right = tile_rect.left
+                elif self.direction == -1: #Player bewegt sich nach links
+                    self.rect.left = tile_rect.right
+                elif self.direction == -2: #Player bewegt sich nach oben
+                    self.rect.top = tile_rect.bottom
+                elif self.direction == 2: #Player bewegt sich nach unten
+                    self.rect.bottom = tile_rect.top
+
 
 
         screen.blit(self.image, self.rect)

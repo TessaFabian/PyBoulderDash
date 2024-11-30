@@ -14,6 +14,8 @@ def draw_grid(screen):
         pg.draw.line(screen, WHITE, (0,line*TILE_SIZE), (WIDTH, line*TILE_SIZE))
         pg.draw.line(screen, WHITE, (line * TILE_SIZE, 0), (line * TILE_SIZE, HEIGHT))
 
+
+
 def main():
     screen = pg.display.set_mode((WIDTH, HEIGHT), pg.SCALED)
 

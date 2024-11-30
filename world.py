@@ -36,26 +36,29 @@ class World:
         for row in world_data:
             col_count = 0
             for tile in row:
-                if tile == 1:
+                if tile == 1: #wall
+                    isObstacle = True
                     img = pg.transform.scale(brick, (TILE_SIZE, TILE_SIZE))
                     img_rect = img.get_rect()
                     img_rect.x = col_count * TILE_SIZE
                     img_rect.y = row_count * TILE_SIZE
-                    tile = (img, img_rect)
+                    tile = (img, img_rect, isObstacle)
                     self.tile_list.append(tile)
-                elif tile == 2:
+                elif tile == 2: #brick
+                    isObstacle = True
                     img = pg.transform.scale(wall, (TILE_SIZE, TILE_SIZE))
                     img_rect = img.get_rect()
                     img_rect.x = col_count * TILE_SIZE
                     img_rect.y = row_count * TILE_SIZE
-                    tile = (img, img_rect)
+                    tile = (img, img_rect, isObstacle)
                     self.tile_list.append(tile)
-                elif tile == 3:
+                elif tile == 3: #dirt
+                    isObstacle = False
                     img = pg.transform.scale(dirt, (TILE_SIZE, TILE_SIZE))
                     img_rect = img.get_rect()
                     img_rect.x = col_count * TILE_SIZE
                     img_rect.y = row_count * TILE_SIZE
-                    tile = (img, img_rect)
+                    tile = (img, img_rect, isObstacle)
                     self.tile_list.append(tile)
                 col_count += 1
             row_count += 1
