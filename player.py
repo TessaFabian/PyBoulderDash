@@ -11,9 +11,12 @@ class Player(pg.sprite.Sprite):
         #images moving to the right
         self.imagesRight = []
         self.imagesLeft = []
+        self.imagesUp = []
+        self.imagesDown = []
         self.index = 0 #index for the images in the animation list
         self.counter = 0 #controls the animation speed
         self.direction = 0 # direction the player is facing(1 right, -1 left)
+        #Bilder laden, links und rechts
         for number in range(1,12):
             if number < 10:
                 imgRight = pg.transform.scale(pg.image.load("images/player0" + str(number) + ".png"),
@@ -25,6 +28,19 @@ class Player(pg.sprite.Sprite):
                 imgLeft = pg.transform.flip(imgRight, False, False)
             self.imagesRight.append(imgRight)
             self.imagesLeft.append(imgLeft)
+        #Bilder laden, up und down
+        for number in range(0,5):
+            if number == 0:
+                img = pg.transform.scale(pg.image.load("images/player20.png"),(50,50))
+                self.imagesUp.append(img)
+                self.imagesDown.append(img)
+            elif number in range(1,3):
+                img = pg.transform.scale(pg.image.load("images/player" + str(number) + ".png"), (50,50))
+                self.imagesUp.append(img)
+            elif number >= 3:
+                img = pg.transform.scale(pg.image.load("images/player" + str(number) + ".png"), (50, 50))
+                self.imagesDown.append(img)
+
         self.image = self.imagesRight[self.index] #player at his starting position
         self.rect = self.image.get_rect()
         self.rect.x = x
