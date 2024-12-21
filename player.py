@@ -20,22 +20,22 @@ class Player(pg.sprite.Sprite):
         for number in range(1,12):
             if number < 10:
                 imgRight = pg.transform.scale(pg.image.load("images/player0" + str(number) + ".png"),
-                    (50, 50))
+                    (50, 50)).convert_alpha()
                 imgLeft = pg.transform.flip(imgRight, True, False)
             if number >= 10:
                 imgRight = pg.transform.scale(pg.image.load("images/player" + str(number) + ".png"),
-                    (50, 50))
+                    (50, 50)).convert_alpha()
                 imgLeft = pg.transform.flip(imgRight, False, False)
             self.imagesRight.append(imgRight)
             self.imagesLeft.append(imgLeft)
         #Bilder laden, up und down
         for number in range(0,5):
             if number == 0:
-                img = pg.transform.scale(pg.image.load("images/player20.png"),(50,50))
+                img = pg.transform.scale(pg.image.load("images/player20.png"),(50,50)).convert_alpha()
                 self.imagesUp.append(img)
                 self.imagesDown.append(img)
             elif number >= 1:
-                img = pg.transform.scale(pg.image.load("images/player2"+str(number)+".png"),(50,50))
+                img = pg.transform.scale(pg.image.load("images/player2"+str(number)+".png"),(50,50)).convert_alpha()
                 self.imagesUp.append(img)
                 self.imagesDown.append(pg.transform.flip(img, False, False))
 
@@ -44,6 +44,7 @@ class Player(pg.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
         self.world = World()
+        print(len(self.imagesRight))
 
     def update(self, screen):
 
@@ -77,12 +78,23 @@ class Player(pg.sprite.Sprite):
         if self.counter > walkCooldown:
             self.counter = 0
             self.index += 1
-            if self.index >= len(self.imagesRight):
+            if self.index >= len(self.imagesRight) and self.direction in (1,-1):
+                print("links rechts")
                 self.index = 1
             if self.direction == 1:
                 self.image = self.imagesRight[self.index]
             if self.direction == -1:
                 self.image = self.imagesLeft[self.index]
+            if self.index >= len(self.imagesUp) and self.direction in (2,-2):
+                print("oben unten")
+                self.index = 1
+            if self.direction == 2:
+                print("oben unten")
+                self.image = self.imagesDown[self.index]
+            if self.direction == -2:
+                print("oben unten")
+                self.image = self.imagesUp[self.index]
+
 
         #check for collisions
         for tile in self.world.tile_list:
