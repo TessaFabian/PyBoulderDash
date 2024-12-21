@@ -34,12 +34,10 @@ class Player(pg.sprite.Sprite):
                 img = pg.transform.scale(pg.image.load("images/player20.png"),(50,50))
                 self.imagesUp.append(img)
                 self.imagesDown.append(img)
-            elif number in range(1,3):
-                img = pg.transform.scale(pg.image.load("images/player" + str(number) + ".png"), (50,50))
+            elif number >= 1:
+                img = pg.transform.scale(pg.image.load("images/player2"+str(number)+".png"),(50,50))
                 self.imagesUp.append(img)
-            elif number >= 3:
-                img = pg.transform.scale(pg.image.load("images/player" + str(number) + ".png"), (50, 50))
-                self.imagesDown.append(img)
+                self.imagesDown.append(pg.transform.flip(img, False, False))
 
         self.image = self.imagesRight[self.index] #player at his starting position
         self.rect = self.image.get_rect()
