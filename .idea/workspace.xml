@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0c3cdb3-9859-45cc-9a77-7f00a27e0c5c" name="Changes" comment="Bilder geladen">
+    <list default="true" id="d0c3cdb3-9859-45cc-9a77-7f00a27e0c5c" name="Changes" comment="Goal of this Branch is introducing sprite sheets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,18 +40,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.main.py.executor": "Run",
-    "Python.tools.executor": "Run",
-    "Python.world.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "handleUpAndDown",
-    "last_opened_file_path": "C:/Users/Tessa Fabian/PycharmProjects/BoulderDash/images",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tools.executor&quot;: &quot;Run&quot;,
+    &quot;Python.world.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;spriteSheets&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tessa Fabian/PycharmProjects/BoulderDash/images&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tessa Fabian\PycharmProjects\BoulderDash\images" />
@@ -219,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734790404813</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Goal of this Branch is introducing sprite sheets">
+      <option name="closed" value="true" />
+      <created>1734793557485</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1734793557485</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,7 +273,8 @@
     <MESSAGE value="player animation, player moves to the right and to the left" />
     <MESSAGE value="Fixed issue whith flipping the player sprite" />
     <MESSAGE value="Bilder geladen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bilder geladen" />
+    <MESSAGE value="Goal of this Branch is introducing sprite sheets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Goal of this Branch is introducing sprite sheets" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
