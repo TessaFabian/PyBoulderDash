@@ -3,48 +3,13 @@ import pygame as pg
 from tools import *
 from locals import *
 from world import *
+from AnimatedSprite import *
 
-class Player(pg.sprite.Sprite):
+class Player():
 
     def __init__(self, x, y):
-        pg.sprite.Sprite.__init__(self)
-        #images moving to the right
-        self.imagesRight = []
-        self.imagesLeft = []
-        self.imagesUp = []
-        self.imagesDown = []
-        self.index = 0 #index for the images in the animation list
-        self.counter = 0 #controls the animation speed
-        self.direction = 0 # direction the player is facing(1 right, -1 left)
-        #Bilder laden, links und rechts
-        for number in range(1,12):
-            if number < 10:
-                imgRight = pg.transform.scale(pg.image.load("images/player0" + str(number) + ".png"),
-                    (50, 50)).convert_alpha()
-                imgLeft = pg.transform.flip(imgRight, True, False)
-            if number >= 10:
-                imgRight = pg.transform.scale(pg.image.load("images/player" + str(number) + ".png"),
-                    (50, 50)).convert_alpha()
-                imgLeft = pg.transform.flip(imgRight, False, False)
-            self.imagesRight.append(imgRight)
-            self.imagesLeft.append(imgLeft)
-        #Bilder laden, up und down
-        for number in range(0,5):
-            if number == 0:
-                img = pg.transform.scale(pg.image.load("images/player20.png"),(50,50)).convert_alpha()
-                self.imagesUp.append(img)
-                self.imagesDown.append(img)
-            elif number >= 1:
-                img = pg.transform.scale(pg.image.load("images/player2"+str(number)+".png"),(50,50)).convert_alpha()
-                self.imagesUp.append(img)
-                self.imagesDown.append(pg.transform.flip(img, False, False))
+        self.idleSprites = AnimatedSprite(16,16, 7,1)
 
-        self.image = self.imagesRight[self.index] #player at his starting position
-        self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
-        self.world = World()
-        print(len(self.imagesRight))
 
     def update(self, screen):
 
